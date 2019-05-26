@@ -149,7 +149,7 @@ client.on("message", async message => {
         let help = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setThumbnail(message.author.avatarURL)
-            .setDescription(`**__برودكاست بوت | **Version** 1.1__ 
+            .setDescription(`**__برودكاست بوت | Version 1.1__ 
 
 💠${prefix}bc:برودكاست عادي
 💠${prefix}invite:دعوت البوت لسيرفرك
@@ -157,7 +157,8 @@ client.on("message", async message => {
 💠${prefix}bco:برودكاست للاونلاين فقط
 💠${prefix}banned:يعرض لك عدد المتبندين من سيرفرك
 💠https://discord.gg/V74Cns3:سيرفر الدعم الفني
-            **`);
+            
+**`);
             message.channel.sendEmbed(help); // رابط السيرفر يعود الى سيرفر CODES .
     }
 });
