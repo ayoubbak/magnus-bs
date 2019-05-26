@@ -139,36 +139,26 @@ client.on("message", async message => {
             .setAuthor(message.author.username, message.author.displayAvatarURL)
             .setThumbnail(message.author.avatarURL)
             .setTitle("**Click Here To Invite The Bot To Your Server :sparkling_heart:**")
-            .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=572864007967604776&permissions=0&scope=bot`);
+            .setURL(`https://discordapp.com/oauth2/authorize?client_id=572864007967604776&permissions=0&scope=bot`);
             message.channel.sendEmbed(invite);
     }
 });
 
-client.on('message', message => {                      
-    if(!message.channel.guild) return;
-       if(message.content.startsWith('%help')) {
-        
-       let help = new Discord.RichEmbed()
+client.on("message", async message => {
+    if(message.content.startsWith(prefix + "help")) {
+        let help = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setThumbnail(message.author.avatarURL)
             .setDescription(`**__برودكاست بوت | Version 1.1__ 
 
-            برودكاست عادي : ${prefix}bc
-            دعوة البوت لسيرفرك : ${prefix}invite
-            معلومات عن السيرفر : ${prefix}server
-            برودكاست للأونلاين فقط : ${prefix}bco
-            يعرض لك عدد المتبندين من سيرفرك : ${prefix}banned
-            رابط سيرفر الدعم الفني : https://discord.gg/xr5bkmj 
+            ${prefix}bc:برودكاست عادي
+            ${prefix}invite:دعوت البوت لسيرفرك
+            ${prefix}server:معلومات عن اليرفر
+            ${prefix}bco:برودكاست للاونلاين فقط
+            ${prefix}banned:يعرض لك عدد المتبندين من سيرفرك
+            https://discord.gg/V74Cns3:سيرفر الدعم الفني
             **`);
-         message.channel.sendEmbed(help); // رابط السيرفر يعود الى سيرفر CODES .
- 
- msg.react('✅')
-       .then(() => msg.react('✅'))
-     
-     
- 
-       let activeFilter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
-  
+            message.channel.sendEmbed(help); // رابط السيرفر يعود الى سيرفر CODES .
     }
 });
        
