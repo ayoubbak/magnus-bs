@@ -1,6 +1,6 @@
 ﻿const Discord = require("discord.js");
 const client = new Discord.Client();
-const prefix = "+";
+const prefix = "%";
 
 
 
@@ -11,7 +11,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : MAGNUS ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`+bc |+invite Broadcast`,"https://www.twitch.tv/bakkariayoub Shop")
+client.user.setGame(`%bc |TeamLast Broadcast`,"https://www.twitch.tv/bakkariayoub Shop")
 client.user.setStatus("dnd")
 });
 
