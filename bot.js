@@ -156,7 +156,7 @@ client.on("message", async message => {
 💠${prefix}server:معلومات عن اليرفر
 💠${prefix}bco:برودكاست للاونلاين فقط
 💠${prefix}banned:يعرض لك عدد المتبندين من سيرفرك
-💠https://discord.gg/V74Cns3:سيرفر الدعم الفني
+💠https://discord.gg/V74Cns3
             
 **`);
             message.channel.sendEmbed(help); // رابط السيرفر يعود الى سيرفر CODES .
