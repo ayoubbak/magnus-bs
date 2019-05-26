@@ -177,23 +177,7 @@ client.on('message', message => {
 
 
 
-client.on("message", async message => {
-    if(message.content.startsWith(prefix + "help")) {
-        let help = new Discord.RichEmbed()
-            .setColor("RANDOM")
-            .setThumbnail(message.author.avatarURL)
-            .setDescription(`**__برودكاست بوت | Version 1.1__ 
 
-            برودكاست عادي : ${prefix}bc
-            دعوة البوت لسيرفرك : ${prefix}invite
-            معلومات عن السيرفر : ${prefix}server
-            برودكاست للأونلاين فقط : ${prefix}bco
-            يعرض لك عدد المتبندين من سيرفرك : ${prefix}banned
-            رابط سيرفر الدعم الفني : https://discord.gg/xr5bkmj 
-            **`);
-            message.channel.sendEmbed(help); // رابط السيرفر يعود الى سيرفر CODES .
-    }
-});
 
 
 client.on("message", message => { //clear
