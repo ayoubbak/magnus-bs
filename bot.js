@@ -160,12 +160,19 @@ client.on('message', message => {
             يعرض لك عدد المتبندين من سيرفرك : ${prefix}banned
             رابط سيرفر الدعم الفني : https://discord.gg/xr5bkmj 
             **`);
-            message.channel.sendEmbed(help); // رابط السيرفر يعود الى سيرفر CODES .
+         message.channel.sendEmbed(help); // رابط السيرفر يعود الى سيرفر CODES .
+ 
+ msg.react('✅')
+       .then(() => msg.react('✅'))
+     
+     
+ 
+       let activeFilter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
+  
     }
 });
        
-        msg.react('✅')
-       .then(() => msg.react('✅'))
+        
 
 
 
