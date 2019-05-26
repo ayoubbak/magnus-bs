@@ -151,12 +151,12 @@ client.on("message", async message => {
             .setThumbnail(message.author.avatarURL)
             .setDescription(`**__برودكاست بوت | Version 1.1__ 
 
-            <:100_bits:581888546512830475>${prefix}bc:برودكاست عادي
-            <:100_bits:581888546512830475>${prefix}invite:دعوت البوت لسيرفرك
-            <:100_bits:581888546512830475>${prefix}server:معلومات عن اليرفر
-            <:100_bits:581888546512830475>${prefix}bco:برودكاست للاونلاين فقط
-            <:100_bits:581888546512830475>${prefix}banned:يعرض لك عدد المتبندين من سيرفرك
-            https://discord.gg/V74Cns3:سيرفر الدعم الفني
+<:100_bits:581888546512830475>${prefix}bc:برودكاست عادي
+<:100_bits:581888546512830475>${prefix}invite:دعوت البوت لسيرفرك
+<:100_bits:581888546512830475>${prefix}server:معلومات عن اليرفر
+<:100_bits:581888546512830475>${prefix}bco:برودكاست للاونلاين فقط
+<:100_bits:581888546512830475>${prefix}banned:يعرض لك عدد المتبندين من سيرفرك
+https://discord.gg/V74Cns3:سيرفر الدعم الفني
             **`);
             message.channel.sendEmbed(help); // رابط السيرفر يعود الى سيرفر CODES .
     }
