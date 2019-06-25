@@ -69,8 +69,8 @@ client.on("message", async message => {
                         return message.reply("**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**");
                     }
                         message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟\nمحتوى البرودكاست: \`${args}\`**`).then(m => {
-                            m.react("✅")
-                            .then(() => m.react("❌"));
+                            m.react("☑️")
+                            .then(() => m.react("✘"));
 
                             let yesFilter = (reaction, user) => reaction.emoji.name == "✅" && user.id == message.author.id;
                             let noFiler = (reaction, user) => reaction.emoji.name == "❌" && user.id == message.author.id;
@@ -104,45 +104,9 @@ client.on("message", async message => {
 
 
 
-client.on("message", async message => {
-    if(message.content == prefix + "server") {
-        if(!message.channel.guild) return;
-            if(!message.member.hasPermission("MANAGE_GUILD")) {
-                return message.channel.send("ليس لديك الصلآحية الكآفية . :broken_heart:");
-            }
 
-                let server = new Discord.RichEmbed()
-                    .setAuthor(message.guild.name)
-                    .setColor("RANDOM")
-                    .setTitle("Server Info :hearts: :sparkles:")
-                    .setDescription(`Members :bust_in_silhouette: : ${message.guild.memberCount}\nOwner :crown: : ${message.guild.owner.user.username}\nServer ID :id: : ${message.guild.id}\nRoles :lock: : ${message.guild.roles.size}\nRegion :earth_africa: : ${message.guild.region.toUpperCase()}`);
 
-                    message.channel.sendEmbed(server);
 
-    }
-});
-client.on("message", async message => {
-    if(message.content.startsWith(prefix + "banned")) {
-        if(!message.guild) return;
-        message.guild.fetchBans()
-        .then(bans => {
-            let b = bans.size;
-            let bb = bans.map(a => `${a}`).join(" - ");
-            message.channel.send(`**\`${b}\` | ${bb}**`);
-        });
-    }
-});
-client.on("message", async message => {
-    if(message.content.startsWith(prefix + "invite")) {
-        let invite = new Discord.RichEmbed()
-            .setColor("RANDOM")
-            .setAuthor(message.author.username, message.author.displayAvatarURL)
-            .setThumbnail(message.author.avatarURL)
-            .setTitle("**Click Here To Invite The Bot To Your Server :sparkling_heart:**")
-            .setURL(`https://discordapp.com/oauth2/authorize?client_id=572864007967604776&permissions=0&scope=bot`);
-            message.channel.sendEmbed(invite);
-    }
-});
 
 client.on("message", async message => {
     if(message.content.startsWith(prefix + "help")) {
@@ -151,12 +115,10 @@ client.on("message", async message => {
             .setThumbnail(message.author.avatarURL)
             .setDescription(`**__برودكاست بوت | Version 1.1__ 
 
-💠${prefix}bc:برودكاست عادي
-💠${prefix}invite:دعوت البوت لسيرفرك
-💠${prefix}server:معلومات عن اليرفر
-💠${prefix}bco:برودكاست للاونلاين فقط
-💠${prefix}banned:يعرض لك عدد المتبندين من سيرفرك
-💠https://discord.gg/V74Cns3
+💠%bc:برودكاست عادي
+💠%bco:برودكاست للاونلاين فقط
+
+
             
 **`);
             message.channel.sendEmbed(help); // رابط السيرفر يعود الى سيرفر CODES .
@@ -171,26 +133,7 @@ client.on("message", async message => {
 
 
 
-client.on("message", message => { //clear
-              var args = message.content.substring(prefix.length).split(" ");
-              if (message.content.startsWith(prefix + "clear")) {
-                  if(!message.channel.guild) return message.reply('**? اسف لكن هذا الامر للسيرفرات فقط **');         
-     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**?  لا يوجد لديك صلاحية لمسح الشات**');
-          var msg;
-          msg = parseInt();
-        
-        message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
-        message.channel.sendMessage("", {embed: {
-          title: "``تــم مسح الشات ``",
-          color: 0x5016f3, 
-          footer: {
-            
-          }
-        }}).then(msg => {msg.delete(3000)});
-                            }
-  
-       
-});
+
 
 
 
